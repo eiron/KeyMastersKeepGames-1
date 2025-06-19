@@ -5,10 +5,10 @@ Collection of implementations for games maintained by @TetraticStorm
 # Haste: Broken Worlds
 
 This implementations adds 5 different types of trials focusing on various aspects of Haste
-- **Shard Completion** adds objectives to complete up to 3 shards.
-- **Endless Statistics** adds objectives for meeting or exceeding statistic values during an Endless run, including shards with S-Ranks, Perfect, Landings, and Top Speed.
+- **Shard Completion** adds objectives to complete up to 3 shards
+- **Endless Statistics** adds objectives for meeting or exceeding statistic values during an Endless run, including shards with S-Ranks, Perfect, Landings, and Top Speed
 - **Challenge Completion** adds objectives for completing some of the various challenges encountered at "?" nodes in Non-Endless Shards
-- **Scavenger Hunt** adds objectives for collecting specified items from either a given set or rarity.
+- **Scavenger Hunt** adds objectives for collecting specified items from either a given set or rarity
 - **Disaster Mode** adds objectives for the 4 levels of Disaster Mode applied to the Final Shard
 
 # Fire Emblem Warriors
@@ -19,3 +19,9 @@ This implementation adds 5 different types of trials focusing on the two differe
 - **History Mode** adds objectives for completubg missions in specific History Mode maps
 - **History Mode with Characters** adds objectives identical to those from the above category, but with additional restrictions on playable characters
 - **Material Hunt** adds objectives for hunting specific rarities of materials dropped by enemy captains
+
+# Shiny Pokemon Hunt Scarlet/Violet
+
+This implementation adds objectives for finding shiny Pokemon in Scarlet/Violet and the two DLCs.
+- Objectives include either a broad area or narrow area to find a shiny Pokemon in, with any method
+- Optionally can be set to include finding a shiny Pokemon from a specific method
