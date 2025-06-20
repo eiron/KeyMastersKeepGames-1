@@ -79,6 +79,32 @@ class ShinyPokemonHuntScarletVioletGame(Game):
                     weight = 2
                 )
             )
+        
+        if self.include_isolation:
+            game_objective_templates.append(
+                GameObjectiveTemplate(
+                    label = "Isolate and capture a Shiny Pokemon of the TYPE type",
+                    data = {
+                        "TYPE": (self.types, 1)
+                    },
+                    is_time_consuming = True,
+                    is_difficult = True,
+                    weight = 3
+                )
+            )
+        
+        if self.include_sparkling:
+            game_objective_templates.append(
+                GameObjectiveTemplate(
+                    label = "Capture a TYPE type Shiny Pokemon with Sparkling Power Lv. 3 active",
+                    data = {
+                        "TYPE": (self.types, 1)
+                    },
+                    is_time_consuming = True,
+                    is_difficult = True,
+                    weight = 3
+                )
+            )
 
         return game_objective_templates
 
@@ -105,6 +131,14 @@ class ShinyPokemonHuntScarletVioletGame(Game):
     @property
     def include_eggs(self) -> bool:
         return "Masuda Hatching" in self.methods_included
+    
+    @property
+    def include_isolation(self) -> bool:
+        return "Isolation Encounters" in self.methods_included
+    
+    @property
+    def include_sandwich(self) -> bool:
+        return "Sparkling Power Sandwich" in self.methods_included
 
     @staticmethod
     def locations_paldea() -> List[str]:
@@ -216,7 +250,7 @@ class ShinyPokemonHuntScarletVioletGame(Game):
 
 class ShinyPokemonHuntScarletVioletDLC(OptionSet):
     """
-    Defines what DLC objectives can generate with.
+    Defines what DLC objectives can generate with
     """
     display_name = "Shiny Pokemon Hunt Scalet/Violet DLC"
 
@@ -229,16 +263,23 @@ class ShinyPokemonHuntScarletVioletDLC(OptionSet):
 
 class ShinyPokemonHuntScarletVioletIncludedMethods(OptionSet):
     """
-    Defines whether or not to include hatching Eggs as objectives.
+    Defines whether or not to include hatching Eggs as objectives
 
-    By default, there will be broad "Catch a shiny" objectives with no method attatched.
-    Adding methods below adds a new objective type 
+    By default, there will be broad "Catch a shiny" objectives with no method attatched
+    Adding methods below adds a new objective type
+
+    Mass Outbreak will add objectives for finding the Pokemon that appears in one of the many Mass Outbreaks per day
+    Masuda Hatching will add objectives for you to hatch a shiny pokemon from an egg, with increased odds by using parents from different IRL regions
+    Isolation Encounters will add objectives where you are tasked with isolating one type of pokemon by using an Encounter Power Sandwich boost for a given Pokemon Yype
+    Sparkling Power Sandwich will ask you to use Herba Mystica to gain a Sparkling Power for a given Pokemon Type
     """
     display_name = "Shiny Pokemon Hunt Scarlet/Violet Included Methods"
 
     valid_keys = [
         "Mass Outbreak",
-        "Masuda Hatching"
+        "Masuda Hatching",
+        "Isolation Encounters",
+        "Sparkling Power Sandwich"
     ]
 
     default = valid_keys
