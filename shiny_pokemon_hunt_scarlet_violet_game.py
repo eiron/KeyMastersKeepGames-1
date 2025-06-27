@@ -93,7 +93,7 @@ class ShinyPokemonHuntScarletVioletGame(Game):
                 )
             )
         
-        if self.include_sparkling:
+        if self.include_sandwich:
             game_objective_templates.append(
                 GameObjectiveTemplate(
                     label = "Capture a TYPE type Shiny Pokemon with Sparkling Power Lv. 3 active",
